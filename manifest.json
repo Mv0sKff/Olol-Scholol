@@ -1,22 +1,32 @@
 {
-    "manifest_version": 2,
-    "name": "Olol Scholol",
-    "description": "Scholol dich",
-    "version": "1.0",
-    "action": {
-        "default_popup": "options.html",
-        "default_icon": "media/olol-scholol-poster.jpg"
-    },
-    "content_scripts": [{
-        "matches": ["<all_urls>"],
-        "all_frames": true,
-        "js": ["content.js"]
-    }],
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-    "permissions": [
-        "https://i.imgur.com/vq9cIK9.jpg"
-    ]
+  "manifest_version": 3,
+  "name": "Olol Scholol",
+  "description": "Scholol dich",
+  "version": "1.0",
+  "icons": {
+    "48": "media/olol-scholol-poster.png"
+  },
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "48": "media/olol-scholol-poster.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://i.imgur.com/vq9cIK9.jpg"
+  ],
+  "permissions": [
+    "storage"
+  ]
 }
