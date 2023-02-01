@@ -3,6 +3,12 @@
   "name": "Olol Scholol",
   "description": "Scholol dich",
   "version": "1.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ololscholol@ololscholol.de",
+      "strict_min_version": "109.0"
+    }
+  },
   "icons": {
     "48": "media/olol-scholol-poster.png"
   },
