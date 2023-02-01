@@ -16,6 +16,12 @@ function run() {
             images[i].src = "https://i.imgur.com/vq9cIK9.jpg";
             images[i].srcset = "";
         }
+
+        let backgroundImages = document.querySelectorAll('[style*="background-image"]')
+        for (let i = 0; i < backgroundImages.length; i++) {
+            bgImages[i].style.backgroundImage = 'url("https://i.imgur.com/vq9cIK9.jpg")';
+        }
+
         observer.observe(document.body, {attributes: true, childList: true, subtree: true})
     })
 }
