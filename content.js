@@ -19,7 +19,7 @@ function run() {
 
         let backgroundImages = document.querySelectorAll('[style*="background-image"]')
         for (let i = 0; i < backgroundImages.length; i++) {
-            bgImages[i].style.backgroundImage = 'url("https://i.imgur.com/vq9cIK9.jpg")';
+            backgroundImages[i].style.backgroundImage = 'url("https://i.imgur.com/vq9cIK9.jpg")';
         }
 
         observer.observe(document.body, {attributes: true, childList: true, subtree: true})
