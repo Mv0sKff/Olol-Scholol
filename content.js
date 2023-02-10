@@ -22,6 +22,14 @@ function run() {
             backgroundImages[i].style.backgroundImage = 'url("https://i.imgur.com/vq9cIK9.jpg")';
         }
 
+        let svgs = document.getElementsByTagName('svg');
+        for (let i = 0; i < svgs.length; i++) {
+            console.log("svg", i)
+            const imgNew = document.createElement("img");
+            imgNew.src = "https://i.imgur.com/vq9cIK9.jpg";
+            svgs[i].replaceWith(imgNew)
+        }
+
         observer.observe(document.body, {attributes: true, childList: true, subtree: true})
     })
 }
