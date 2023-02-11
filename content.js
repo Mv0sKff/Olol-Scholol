@@ -4,6 +4,9 @@ chrome.storage.onChanged.addListener(run)
 
 const observer = new MutationObserver(run)
 
+//"https://i.imgur.com/vq9cIK9.jpg"
+var imageUrl = chrome.runtime.getURL('media/olol-scholol-poster.png')
+
 function run() {
     chrome.storage.sync.get(['active'], function (data) {
         if (!data.active) {
@@ -13,21 +16,21 @@ function run() {
 
         let images = document.getElementsByTagName('img');
         for (let i = 0; i < images.length; i++) {
-            images[i].src = "https://i.imgur.com/vq9cIK9.jpg";
-            images[i].srcset = "";
+            images[i].src = imageUrl;
+            images[i].srcset = imageUrl;
         }
 
         let backgroundImages = document.querySelectorAll('[style*="background-image"]')
         for (let i = 0; i < backgroundImages.length; i++) {
-            backgroundImages[i].style.backgroundImage = 'url("https://i.imgur.com/vq9cIK9.jpg")';
+            backgroundImages[i].style.backgroundImage = 'url("' + imageUrl + '")';
         }
 
         let svgs = document.getElementsByTagName('svg');
         for (let i = 0; i < svgs.length; i++) {
-            console.log("svg", i)
+            //console.log("svg", i)
             const imgNew = document.createElement("img");
-            imgNew.src = "https://i.imgur.com/vq9cIK9.jpg";
-            svgs[i].replaceWith(imgNew)
+            imgNew.src = imageUrl;
+            svgs[i].replaceWith(imgNew);
         }
 
         observer.observe(document.body, {attributes: true, childList: true, subtree: true})
